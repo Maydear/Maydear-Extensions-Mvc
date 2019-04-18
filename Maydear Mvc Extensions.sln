@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2006
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maydear.Mvc", "src\Maydear.Mvc\Maydear.Mvc.csproj", "{EDA2C70F-2AE8-4B95-B48F-B63834CDA0DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{5E913CDD-C587-4A57-9C68-573C719E90B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{715A4C99-7842-4A0C-829A-8111C764F90D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D21F1CE0-E811-4B3F-AC35-AEC3B1542CA6}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		CHANGELOG = CHANGELOG
+		LICENSE-2.0.txt = LICENSE-2.0.txt
+		NuGet.config = NuGet.config
+		nuget.exe = nuget.exe
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaydearMvcSample", "sample\MaydearMvcSample\MaydearMvcSample.csproj", "{7CCF18E6-422F-43AE-BB17-4AEDF58DD7D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mayder.Mvc.UnitTest", "test\Mayder.Mvc.UnitTest\Mayder.Mvc.UnitTest.csproj", "{DA2881F9-C018-43CF-AAF5-E92C22AEC35E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDA2C70F-2AE8-4B95-B48F-B63834CDA0DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDA2C70F-2AE8-4B95-B48F-B63834CDA0DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDA2C70F-2AE8-4B95-B48F-B63834CDA0DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDA2C70F-2AE8-4B95-B48F-B63834CDA0DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CCF18E6-422F-43AE-BB17-4AEDF58DD7D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CCF18E6-422F-43AE-BB17-4AEDF58DD7D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CCF18E6-422F-43AE-BB17-4AEDF58DD7D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CCF18E6-422F-43AE-BB17-4AEDF58DD7D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA2881F9-C018-43CF-AAF5-E92C22AEC35E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA2881F9-C018-43CF-AAF5-E92C22AEC35E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA2881F9-C018-43CF-AAF5-E92C22AEC35E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA2881F9-C018-43CF-AAF5-E92C22AEC35E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7CCF18E6-422F-43AE-BB17-4AEDF58DD7D3} = {715A4C99-7842-4A0C-829A-8111C764F90D}
+		{DA2881F9-C018-43CF-AAF5-E92C22AEC35E} = {5E913CDD-C587-4A57-9C68-573C719E90B3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E6DE873A-FB2A-4A67-B2FC-C2313270F5AF}
+	EndGlobalSection
+EndGlobal
