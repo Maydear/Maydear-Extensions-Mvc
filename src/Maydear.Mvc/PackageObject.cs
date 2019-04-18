@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Maydear.Mvc
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class PackageObject : IPackageObject<object>
     {
         /// <summary>

@@ -26,9 +26,15 @@ namespace Maydear.Mvc.Middleware
         /// 构造函数
         /// </summary>
         /// <param name="next"></param>
+        /// <param name="loggerFactory"></param>
         public TimeConsumingMiddlerware(RequestDelegate next,ILoggerFactory loggerFactory)
         {
-            this.next = next;
+            if (loggerFactory == null)
+            {
+                throw new ArgumentNullException(nameof(loggerFactory));
+            }
+
+            this.next = next ?? throw new ArgumentNullException(nameof(next));
             this.logger = loggerFactory.CreateLogger<TimeConsumingMiddlerware>();
         }
 

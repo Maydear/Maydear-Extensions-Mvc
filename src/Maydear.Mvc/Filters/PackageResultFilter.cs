@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Maydear.Mvc.Filters
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class PackageResultFilter : IResultFilter, IAsyncResultFilter
     {
         /// <summary>

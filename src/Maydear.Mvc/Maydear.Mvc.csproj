@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
@@ -11,13 +11,13 @@
         <Company></Company>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-        <Title>Maydear常用扩展方法</Title>
-        <Description>常用扩展方法，涵盖加解密、字符串操作，Email发送，分页包装实体等</Description>
+        <Title>Maydear Mvc 扩展</Title>
+        <Description>对api数据对象进行包装，增加请求日志耗时。</Description>
         <Version>2.1.1</Version>
         <AssemblyName>Maydear.Mvc</AssemblyName>
         <NeutralLanguage>zh-CN</NeutralLanguage>
         <Language>zh-CN</Language>
-        <PackageTags>Maydear maydear</PackageTags>
+        <PackageTags>Maydear.Mvc maydear</PackageTags>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)'=='Release|netstandard2.0'">

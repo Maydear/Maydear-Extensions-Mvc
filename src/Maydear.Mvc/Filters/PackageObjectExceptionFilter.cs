@@ -111,7 +111,7 @@ namespace Maydear.Mvc.Filters
         /// </summary>
         /// <param name="exception">微服务异常基类</param>
         /// <param name="requestId"></param>
-        /// <param name="contentResult"></param>
+        /// <param name="result"></param>
         /// <returns></returns>
         private PackageObjectResult BuidResult(PackageObjectException exception, Guid requestId, object result = null)
         {

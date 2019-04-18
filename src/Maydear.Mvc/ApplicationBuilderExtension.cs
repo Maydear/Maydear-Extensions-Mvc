@@ -8,6 +8,9 @@ using System.Text;
 
 namespace Maydear.Mvc
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class ApplicationBuilderExtension
     {
         /// <summary>
