@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Maydear.Mvc
 {
-    public class PackageObject
+    public class PackageObject : IPackageObject<object>
     {
         /// <summary>
         /// 请求识别号

@@ -23,11 +23,6 @@ namespace Maydear.Mvc.Middleware
         private readonly ILogger logger;
 
         /// <summary>
-        /// 请求号
-        /// </summary>
-        private const string REQUESTID_HEADER_KEY = "RequestId";
-
-        /// <summary>
         /// 构造函数
         /// </summary>
         /// <param name="next"></param>
@@ -46,14 +41,24 @@ namespace Maydear.Mvc.Middleware
         {
             System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
             stopwatch.Start();
-            if (context.Request.Headers != null && !context.Request.Headers.ContainsKey(REQUESTID_HEADER_KEY))
+            if (context.Request.Headers != null && !context.Request.Headers.ContainsKey(Constants.REQUEST_ID_HEADER_KEY))
             {
-                context.Request.Headers.Add(REQUESTID_HEADER_KEY, Guid.NewGuid().ToString());
+                context.Request.Headers.Add(Constants.REQUEST_ID_HEADER_KEY, Guid.NewGuid().ToString());
             }
-            logger.LogInformation($"Start Request({context.Request.Headers[REQUESTID_HEADER_KEY]}) --> [{context.Request.Method}][{context.Request.Path}]");
+            logger.LogInformation($"Request({context.Request.Headers[Constants.REQUEST_ID_HEADER_KEY]}) --> {context.Request.Method} {Url(context.Request)} ");
             await next.Invoke(context);
             stopwatch.Stop();
-            logger.LogInformation($"End Request({context.Request.Headers[REQUESTID_HEADER_KEY]}) --> [{context.Request.Method}][{context.Request.Path}][{stopwatch.Elapsed.TotalSeconds}ms]");
+            logger.LogInformation($"Request finish ({context.Request.Headers[Constants.REQUEST_ID_HEADER_KEY]}) -->  {context.Request.Method} {Url(context.Request)} {stopwatch.Elapsed.TotalMilliseconds.ToString("F2")}ms");
         }
+
+        private string Url(HttpRequest request)
+        {
+           return new StringBuilder()
+                .Append(request.PathBase)
+                .Append(request.Path)
+                .Append(request.QueryString)
+                .ToString();
+        }
+
     }
 }

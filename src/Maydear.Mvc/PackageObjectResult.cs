@@ -26,8 +26,19 @@ namespace Maydear.Mvc
         /// <param name="obj">对象结果</param>
         /// <param name="requestId">请求id</param>
         public PackageObjectResult(ObjectResult obj, Guid requestId)
-            : this(new PackageObject() { Body = obj.Value, StatusCode = 2000, RequestId = requestId })
+            : this(new PackageObject()
+            {
+                Body = obj.Value,
+                StatusCode = (int)Mvc.StatusCode.Normal,
+                RequestId = requestId,
+                Now = DateTimeOffset.Now
+            })
         {
         }
+
+        /// <summary>
+        /// 值
+        /// </summary>
+        public new PackageObject Value { get; set; }
     }
 }
