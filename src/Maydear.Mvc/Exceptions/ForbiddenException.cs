@@ -13,5 +13,12 @@ namespace Maydear.Mvc.Exceptions
         /// </summary>
         public ForbiddenException()
             : base((int)Mvc.StatusCode.Forbidden, Mvc.StatusCode.Forbidden.GetDescription()) { }
+
+        /// <summary>
+        /// 带异常的构造函数
+        /// </summary>
+        /// <param name="excep"></param>
+        public ForbiddenException(Exception excep)
+            : base((int)Mvc.StatusCode.Forbidden, excep.Message, excep) { }
     }
 }

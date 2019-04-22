@@ -30,9 +30,11 @@ namespace Maydear.Mvc
         /// 使用云丝尚微服务构造器
         /// </summary>
         /// <param name="app"></param>
+        /// <param name="configureRoutes"></param>
         /// <returns></returns>
         public static IApplicationBuilder UseMaydearMvc(this IApplicationBuilder app, Action<IRouteBuilder> configureRoutes)
         {
+            app.UseAuthentication();
             app.UseMiddleware<TimeConsumingMiddlerware>();
             app.UseMvc(configureRoutes);
             return app;

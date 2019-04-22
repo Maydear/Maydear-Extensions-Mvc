@@ -1,4 +1,6 @@
+using Maydear.Mvc.Authentication;
 using Maydear.Mvc.Filters;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -29,7 +31,11 @@ namespace Maydear.Mvc
             {
                 throw new ArgumentNullException(nameof(configuration));
             }
-
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = MaydearAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = MaydearAuthenticationDefaults.AuthenticationScheme;
+            }).AddMaydear();
             services.AddMvc(options =>
             {
                 options.Filters.Add<ValidationActionFilter>();

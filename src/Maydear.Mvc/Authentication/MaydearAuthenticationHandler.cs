@@ -108,7 +108,7 @@ namespace Maydear.Mvc.Authentication
             }
 
             Response.StatusCode = 401;
-            Response.Headers.Append(HeaderNames.WWWAuthenticate, Options.Challenge);
+            Response.Headers.Append(HeaderNames.Authorization, Options.Challenge);
 
         }
 
