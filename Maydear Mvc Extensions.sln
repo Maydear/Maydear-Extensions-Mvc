@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maydear.Mvc", "src\Maydear.Mvc\Maydear.Mvc.csproj", "{EDA2C70F-2AE8-4B95-B48F-B63834CDA0DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maydear.Mvc", "src\Maydear.Mvc\Maydear.Mvc.csproj", "{EDA2C70F-2AE8-4B95-B48F-B63834CDA0DC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{5E913CDD-C587-4A57-9C68-573C719E90B3}"
 EndProject
@@ -23,7 +23,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaydearMvcSample", "sample\MaydearMvcSample\MaydearMvcSample.csproj", "{7CCF18E6-422F-43AE-BB17-4AEDF58DD7D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mayder.Mvc.UnitTest", "test\Mayder.Mvc.UnitTest\Mayder.Mvc.UnitTest.csproj", "{DA2881F9-C018-43CF-AAF5-E92C22AEC35E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mayder.Mvc.UnitTest", "test\Mayder.Mvc.UnitTest\Mayder.Mvc.UnitTest.csproj", "{DA2881F9-C018-43CF-AAF5-E92C22AEC35E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maydear.Mvc.Caching.Memory", "src\Maydear.Mvc.Caching.Memory\Maydear.Mvc.Caching.Memory.csproj", "{38CE50B6-2C74-48CC-A7B3-E5A389FF8C15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maydear.Mvc.Caching.Redis", "src\Maydear.Mvc.Caching.Redis\Maydear.Mvc.Caching.Redis.csproj", "{0ADE0752-8576-4B6B-8A5C-9220503A246A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +47,14 @@ Global
 		{DA2881F9-C018-43CF-AAF5-E92C22AEC35E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA2881F9-C018-43CF-AAF5-E92C22AEC35E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA2881F9-C018-43CF-AAF5-E92C22AEC35E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38CE50B6-2C74-48CC-A7B3-E5A389FF8C15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38CE50B6-2C74-48CC-A7B3-E5A389FF8C15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38CE50B6-2C74-48CC-A7B3-E5A389FF8C15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38CE50B6-2C74-48CC-A7B3-E5A389FF8C15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ADE0752-8576-4B6B-8A5C-9220503A246A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ADE0752-8576-4B6B-8A5C-9220503A246A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ADE0752-8576-4B6B-8A5C-9220503A246A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ADE0752-8576-4B6B-8A5C-9220503A246A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace Maydear.Mvc
 {
+    /// <summary>
+    /// 访问令牌临时存储接口
+    /// </summary>
     public interface IAccessTokenStore
     {
         /// <summary>
