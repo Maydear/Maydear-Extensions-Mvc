@@ -1,15 +1,38 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <PackageProjectUrl>https://github.com/Maydear/Maydear</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Maydear/Maydear.git</RepositoryUrl>
+        <PackageLicenseFile>LICENSE-2.0.txt</PackageLicenseFile>
+        <RepositoryType>git</RepositoryType>
+        <Copyright>Maydear Team (admin@maydear.com)</Copyright>
+        <Authors>Kelvin</Authors>
+        <Company></Company>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <Title>Maydear Mvc 扩展</Title>
+        <Description>将accessToken值存储在Memory中的扩展。</Description>
+        <Version>2.1.1</Version>
+        <AssemblyName>Maydear.Mvc.Caching.Memory</AssemblyName>
+        <NeutralLanguage>zh-CN</NeutralLanguage>
+        <Language>zh-CN</Language>
+        <PackageTags>Maydear.Mvc.Caching.Memory maydear</PackageTags>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)'=='Release|netstandard2.0'">
+        <DocumentationFile>bin\Release\netstandard2.0\Maydear.Mvc.Caching.Memory.xml</DocumentationFile>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)'=='Release'">
+        <DocumentationFile>bin\Release\Maydear.Mvc.Caching.Memory.xml</DocumentationFile>
+        <OutputPath>..\..\publish\</OutputPath>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.2.0" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.2.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Maydear.Mvc\Maydear.Mvc.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Maydear.Mvc\Maydear.Mvc.csproj" />
+        <None Include="..\..\LICENSE-2.0.txt" Pack="true" Visible="false" PackagePath="" />
+    </ItemGroup>
 
 </Project>

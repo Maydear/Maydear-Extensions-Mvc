@@ -22,10 +22,14 @@ namespace Maydear.Mvc.Authentication
         /// <summary>
         /// 构造函数
         /// </summary>
-        /// <param name="tokenService"></param>
         public PostConfigureTokenAuthenticationOptions(IAccessTokenStore accessTokenStore, IOptions<AccessTokenOptions> accessTokenOptions)
         {
-            this.accessTokenStore = accessTokenStore;
+            if (accessTokenOptions == null)
+            {
+                throw new ArgumentNullException(nameof(accessTokenOptions));
+            }
+
+            this.accessTokenStore = accessTokenStore ?? throw new ArgumentNullException(nameof(accessTokenStore));
             this.accessTokenOptions = accessTokenOptions.Value;
         }
 
@@ -36,6 +40,11 @@ namespace Maydear.Mvc.Authentication
         /// <param name="options">配置项</param>
         public void PostConfigure(string name, MaydearAuthenticationOptions options)
         {
+            if (options == null)
+            {
+                throw new ArgumentNullException(nameof(options));
+            }
+
             if (options.AccessTokenStore == null)
             {
                 options.AccessTokenStore = accessTokenStore;

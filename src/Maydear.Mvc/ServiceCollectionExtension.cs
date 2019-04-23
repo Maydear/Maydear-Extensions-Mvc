@@ -2,34 +2,27 @@ using Maydear.Mvc.Authentication;
 using Maydear.Mvc.Filters;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Maydear.Mvc
+namespace Microsoft.Extensions.DependencyInjection
 {
     /// <summary>
     /// 
     /// </summary>
-    public static class MvcServiceCollectionExtension
+    public static class ServiceCollectionExtension
     {
         /// <summary>
         /// 
         /// </summary>
         /// <param name="services"></param>
-        /// <param name="configuration"></param>
         /// <returns></returns>
-        public static IServiceCollection AddMaydearMvc(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddMaydearMvc(this IServiceCollection services)
         {
             if (services == null)
             {
                 throw new ArgumentNullException(nameof(services));
-            }
-
-            if (configuration == null)
-            {
-                throw new ArgumentNullException(nameof(configuration));
             }
             services.AddAuthentication(options =>
             {

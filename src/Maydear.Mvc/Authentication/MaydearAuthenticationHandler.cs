@@ -131,7 +131,7 @@ namespace Maydear.Mvc.Authentication
                     return AuthenticateResult.Fail($"No {nameof(Options.AccessTokenStore)}");
                 }
                 string accessTokenValue = await Options.AccessTokenStore.RetrieveAsync(accessTokenKey);
-                if (string.IsNullOrWhiteSpace(accessTokenValue))
+                if (!string.IsNullOrWhiteSpace(accessTokenValue))
                 {
                     ClaimsPrincipal principal = new ClaimsPrincipal(
                                              new ClaimsIdentity(
