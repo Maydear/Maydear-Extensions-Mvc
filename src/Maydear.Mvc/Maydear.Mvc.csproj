@@ -13,7 +13,7 @@
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <Title>Maydear Mvc 扩展</Title>
         <Description>对api数据对象进行包装，增加请求日志耗时。</Description>
-        <Version>2.1.2</Version>
+        <Version>2.1.3</Version>
         <AssemblyName>Maydear.Mvc</AssemblyName>
         <NeutralLanguage>zh-CN</NeutralLanguage>
         <Language>zh-CN</Language>
@@ -32,7 +32,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Maydear" Version="2.1.1" />
+        <PackageReference Include="Maydear" Version="2.1.3" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
