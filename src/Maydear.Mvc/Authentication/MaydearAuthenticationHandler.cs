@@ -69,7 +69,7 @@ namespace Maydear.Mvc.Authentication
                 return AuthenticateResult.NoResult();
             }
 
-            ///
+            //
             string[] authorizationDir = authorizationString.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             //Authorization 的值不是有效的格式
             if (authorizationDir.Length != 2)

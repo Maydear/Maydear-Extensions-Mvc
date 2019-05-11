@@ -1,3 +1,4 @@
+using Maydear.Exceptions;
 using Maydear.Mvc.Exceptions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -73,9 +74,9 @@ namespace Maydear.Mvc.Filters
             {
                 requestId = Guid.NewGuid();
             }
-            if (context.Exception is PackageObjectException)
+            if (context.Exception is StatusCodeException)
             {
-                context.Result = BuidResult(context.Exception as PackageObjectException, requestId, result);
+                context.Result = BuidResult(context.Exception as StatusCodeException, requestId, result);
             }
             else
             {
@@ -113,14 +114,14 @@ namespace Maydear.Mvc.Filters
         /// <param name="requestId"></param>
         /// <param name="result"></param>
         /// <returns></returns>
-        private PackageObjectResult BuidResult(PackageObjectException exception, Guid requestId, object result = null)
+        private PackageObjectResult BuidResult(StatusCodeException exception, Guid requestId, object result = null)
         {
             return new PackageObjectResult(new PackageObject()
             {
                 StatusCode = exception.StatusCode,
                 Body = result,
                 RequestId = requestId,
-                Notification = exception.Notification,
+                Notification = exception.Message,
                 Now = DateTimeOffset.Now
             });
         }

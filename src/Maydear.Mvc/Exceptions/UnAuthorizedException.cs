@@ -1,4 +1,5 @@
 using System;
+using Maydear.Exceptions;
 
 namespace Maydear.Mvc.Exceptions
 {
@@ -6,7 +7,7 @@ namespace Maydear.Mvc.Exceptions
     /// 当前请求需要用户验证异常
     /// </summary>
     [Serializable]
-    public class UnAuthorizedException : PackageObjectException
+    public class UnAuthorizedException : StatusCodeException
     {
         /// <summary>
         /// 无参数构造函数

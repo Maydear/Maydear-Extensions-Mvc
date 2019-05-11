@@ -7,7 +7,7 @@ namespace Maydear.Mvc.Exceptions
     /// 不良请求，Validation验证不通过时触发得异常
     /// </summary>
     [Serializable]
-    public class ValidFailureException : PackageObjectException
+    public class ValidFailureException : StatusCodeException
     {
         /// <summary>
         /// 无参数构造函数

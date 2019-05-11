@@ -1,11 +1,12 @@
 using System;
+using Maydear.Exceptions;
 
 namespace Maydear.Mvc.Exceptions
 {
     /// <summary>
     /// 请求所希望得到的资源未被在服务器上发现得异常。
     /// </summary>
-    public class NotFoundException : PackageObjectException
+    public class NotFoundException : StatusCodeException
     {
         /// <summary>
         /// 无参构造函数

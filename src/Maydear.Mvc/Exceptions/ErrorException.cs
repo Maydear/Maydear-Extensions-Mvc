@@ -1,3 +1,4 @@
+using Maydear.Exceptions;
 using System;
 
 namespace Maydear.Mvc.Exceptions
@@ -5,7 +6,7 @@ namespace Maydear.Mvc.Exceptions
     /// <summary>
     /// 系统错误
     /// </summary>
-    public class ErrorException : PackageObjectException
+    public class ErrorException : StatusCodeException
     {
         /// <summary>
         /// 无参构造函数

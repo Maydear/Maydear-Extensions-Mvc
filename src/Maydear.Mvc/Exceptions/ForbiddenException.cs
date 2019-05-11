@@ -1,3 +1,4 @@
+using Maydear.Exceptions;
 using System;
 
 namespace Maydear.Mvc.Exceptions
@@ -6,7 +7,7 @@ namespace Maydear.Mvc.Exceptions
     /// 当前用户不满足访问条件的异常
     /// </summary>
     [Serializable]
-    public class ForbiddenException : PackageObjectException
+    public class ForbiddenException : StatusCodeException
     {
         /// <summary>
         /// 无参数构造函数
