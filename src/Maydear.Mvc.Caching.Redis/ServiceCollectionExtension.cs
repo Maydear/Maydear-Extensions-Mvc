@@ -1,12 +1,13 @@
+using Maydear.Mvc;
+using Maydear.Mvc.Caching.Redis;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Maydear.Mvc.Caching.Redis
+namespace Microsoft.Extensions.DependencyInjection
 {
     /// <summary>
     /// 

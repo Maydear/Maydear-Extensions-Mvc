@@ -48,8 +48,8 @@ namespace Maydear.Mvc.Caching.Redis
         public Task RenewAsync(string key, string tokenValue)
         {
             DistributedCacheEntryOptions options = new DistributedCacheEntryOptions();
-            options.SetSlidingExpiration(TimeSpan.FromSeconds(accessTokenOptions.Expires)); // TODO: configurable.
-            return cache.SetAsync($"{KeyPrefix}{key}", tokenValue.ToBytes());
+            options.SetSlidingExpiration(TimeSpan.FromSeconds(accessTokenOptions.Expires));
+            return cache.SetAsync($"{KeyPrefix}{key}", tokenValue.ToBytes(), options);
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Maydear.Mvc.Caching.Redis
         public async Task<string> StoreAsync(string tokenValue)
         {
             string guid = Guid.NewGuid().ToString("N");
-            await RenewAsync($"{KeyPrefix}{guid}", tokenValue);
+            await RenewAsync(guid, tokenValue);
             return guid;
         }
     }

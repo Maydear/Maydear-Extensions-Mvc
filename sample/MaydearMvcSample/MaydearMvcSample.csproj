@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Maydear.Mvc.Caching.Memory\Maydear.Mvc.Caching.Memory.csproj" />
+    <ProjectReference Include="..\..\src\Maydear.Mvc.Caching.Redis\Maydear.Mvc.Caching.Redis.csproj" />
     <ProjectReference Include="..\..\src\Maydear.Mvc\Maydear.Mvc.csproj" />
   </ItemGroup>
 
