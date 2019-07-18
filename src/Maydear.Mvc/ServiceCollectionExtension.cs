@@ -1,6 +1,7 @@
 using Maydear.Mvc.Authentication;
 using Maydear.Mvc.Filters;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -34,7 +35,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 options.Filters.Add<ValidationActionFilter>();
                 options.Filters.Add<PackageObjectExceptionFilter>();
                 options.Filters.Add<PackageResultFilter>();
-            });
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             return services;
         }
     }
