@@ -1,10 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <PackageProjectUrl>https://github.com/Maydear/Maydear-Extensions-Mvc</PackageProjectUrl>
         <RepositoryUrl>https://github.com/Maydear/Maydear-Extensions-Mvc.git</RepositoryUrl>
         <PackageIconUrl>http://oss.lvcoco.com/static/logo.png</PackageIconUrl>
+        <PackageIcon>icon.png</PackageIcon>
         <PackageLicenseFile>LICENSE-2.0.txt</PackageLicenseFile>
         <RepositoryType>git</RepositoryType>
         <Copyright>Maydear Team (admin@maydear.com)</Copyright>
@@ -30,6 +31,7 @@
     </PropertyGroup>
     <ItemGroup>
         <None Include="..\..\LICENSE-2.0.txt" Pack="true" Visible="false" PackagePath="" />
+        <None Include="..\..\icon.png" Pack="true" Visible="false" PackagePath=""/>
     </ItemGroup>
 
     <ItemGroup>

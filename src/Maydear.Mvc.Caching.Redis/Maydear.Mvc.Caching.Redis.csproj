@@ -5,6 +5,7 @@
         <PackageProjectUrl>https://github.com/Maydear/Maydear-Extensions-Mvc</PackageProjectUrl>
         <RepositoryUrl>https://github.com/Maydear/Maydear-Extensions-Mvc.git</RepositoryUrl>
         <PackageIconUrl>http://oss.lvcoco.com/static/logo.png</PackageIconUrl>
+        <PackageIcon>icon.png</PackageIcon>
         <PackageLicenseFile>LICENSE-2.0.txt</PackageLicenseFile>
         <RepositoryType>git</RepositoryType>
         <Copyright>Maydear Team (admin@maydear.com)</Copyright>
@@ -20,9 +21,7 @@
         <Language>zh-CN</Language>
         <PackageTags>Maydear.Mvc.Caching.Redis Maydear.Mvc</PackageTags>
     </PropertyGroup>
-    <ItemGroup>
-        <PackageReference Include="Microsoft.Extensions.Caching.Redis" Version="2.2.0" />
-    </ItemGroup>
+
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)'=='Release|netstandard2.0'">
         <DocumentationFile>bin\Release\netstandard2.0\Maydear.Mvc.Caching.Redis.xml</DocumentationFile>
     </PropertyGroup>
@@ -30,8 +29,17 @@
         <DocumentationFile>bin\Release\Maydear.Mvc.Caching.Redis.xml</DocumentationFile>
         <OutputPath>..\..\publish\</OutputPath>
     </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Caching.Redis" Version="2.2.0" />
+    </ItemGroup>
+
     <ItemGroup>
         <ProjectReference Include="..\Maydear.Mvc\Maydear.Mvc.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
         <None Include="..\..\LICENSE-2.0.txt" Pack="true" Visible="false" PackagePath="" />
+        <None Include="..\..\icon.png" Pack="true" Visible="false" PackagePath="" />
     </ItemGroup>
 </Project>
