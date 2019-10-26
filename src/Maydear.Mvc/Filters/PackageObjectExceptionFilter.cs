@@ -80,11 +80,11 @@ namespace Maydear.Mvc.Filters
             }
             else
             {
+                logger.LogError(context.Exception.Message);
                 if (hostingEnvironment.IsDevelopment())
                 {
                     return;
                 }
-                logger.LogError(context.Exception.Message);
                 context.Result = BuidResult(new ErrorException(context.Exception), requestId, result);
             }
             //异常已处理
