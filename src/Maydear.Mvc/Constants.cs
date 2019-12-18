@@ -12,6 +12,6 @@ namespace Maydear.Mvc
         /// <summary>
         /// 请求号
         /// </summary>
-        public const string REQUEST_ID_HEADER_KEY = "RequestId";
+        public const string REQUEST_ID_HEADER_KEY = "X-Requested-Id";
     }
 }
