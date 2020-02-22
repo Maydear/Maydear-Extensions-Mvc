@@ -137,7 +137,7 @@ namespace Maydear.Mvc.Authentication
                                              new ClaimsIdentity(
                                                  new[] {
                                                      new Claim("AccessToken", accessTokenKey, ClaimValueTypes.String, MaydearAuthenticationDefaults.ClaimsIssuer),
-                                                     new Claim("AccessTokenValue", accessTokenValue, ClaimValueTypes.Integer64, MaydearAuthenticationDefaults.ClaimsIssuer)
+                                                     new Claim("AccessTokenValue", accessTokenValue, ClaimValueTypes.String, MaydearAuthenticationDefaults.ClaimsIssuer)
                                                  },
                                                  MaydearAuthenticationDefaults.AuthenticationScheme
                      ));
