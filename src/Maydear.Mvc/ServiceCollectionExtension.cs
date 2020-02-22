@@ -15,7 +15,7 @@ namespace Microsoft.Extensions.DependencyInjection
     public static class ServiceCollectionExtension
     {
         /// <summary>
-        /// 
+        /// 将在后续版本请使用<see cref="AddMaydearApiControllers"/>
         /// </summary>
         /// <param name="services"></param>
         /// <returns></returns>
