@@ -96,6 +96,34 @@ namespace Maydear.Mvc
         }
 
         /// <summary>
+        /// 异步刷新token内容执行用户登出
+        /// </summary>
+        /// <param name="context">Http上下文</param>
+        /// <param name="accessTokenObject">访问令牌对象</param>
+        /// <returns></returns>
+        public static async Task RefreshTokenValueAsync<T>(this HttpContext context, T accessTokenObject)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            if (context.RequestServices == null)
+            {
+                throw new MissingMemberException("HttpContext.RequestServices is null");
+            }
+
+            IAccessTokenStore accessTokenStore = context.RequestServices.GetRequiredService<IAccessTokenStore>();
+            string accessTokenKey = GetAccessToken(context);
+            if (string.IsNullOrEmpty(accessTokenKey))
+            {
+                return;
+            }
+            string accessTokenValue = Newtonsoft.Json.JsonConvert.SerializeObject(accessTokenObject);
+            await accessTokenStore.RenewAsync(accessTokenKey, accessTokenValue);
+        }
+
+        /// <summary>
         /// 执行用户登出
         /// </summary>
         /// <param name="context">Http上下文</param>
