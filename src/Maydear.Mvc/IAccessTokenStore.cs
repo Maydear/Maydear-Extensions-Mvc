@@ -26,7 +26,7 @@ namespace Maydear.Mvc
         Task RenewAsync(string key, string tokenValue);
 
         /// <summary>
-        /// 获取AccessToken
+        /// 取回AccessToken的值
         /// </summary>
         /// <param name="key">AccessToken键</param>
         /// <returns></returns>

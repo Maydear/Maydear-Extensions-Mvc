@@ -1,0 +1,19 @@
+variables:
+  BUILD_IMAGE: $REGISTRIES_HOST/debian/dotnet-sdk-docker:3.1.101
+  WORKSPACES: /builds/$CI_PROJECT_PATH
+  STARTUP_PROJECT_NAME: Maydear.SFExpress
+
+stages:
+  - release
+    
+release:
+  image: $BUILD_IMAGE
+  stage: release
+  before_script:
+    - docker login -u $REGISTRY_USER -p $REGISTRY_PWD $REGISTRIES_HOST
+  script:
+    - dotnet restore $WORKSPACES/src/$STARTUP_PROJECT_NAME/$STARTUP_PROJECT_NAME.csproj 
+    - dotnet publish $WORKSPACES/src/$STARTUP_PROJECT_NAME/$STARTUP_PROJECT_NAME.csproj -c Release
+    - sh $WORKSPACES/push-nuget.sh $NUGET_KEY
+  only:
+    - tags

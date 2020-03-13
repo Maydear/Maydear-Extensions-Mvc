@@ -35,6 +35,11 @@ namespace Maydear.Mvc.Caching.Redis
         /// <returns></returns>
         public Task RemoveAsync(string key)
         {
+            if (string.IsNullOrWhiteSpace(key))
+            {
+                throw new ArgumentNullException(nameof(key));
+            }
+
             cache.Remove($"{KeyPrefix}{key}");
             return Task.FromResult(0);
         }
@@ -47,6 +52,16 @@ namespace Maydear.Mvc.Caching.Redis
         /// <returns></returns>
         public Task RenewAsync(string key, string tokenValue)
         {
+            if (string.IsNullOrWhiteSpace(key))
+            {
+                throw new ArgumentNullException(nameof(key));
+            }
+
+            if (string.IsNullOrWhiteSpace(tokenValue))
+            {
+                throw new ArgumentNullException(nameof(tokenValue));
+            }
+
             DistributedCacheEntryOptions options = new DistributedCacheEntryOptions();
             options.SetSlidingExpiration(TimeSpan.FromSeconds(accessTokenOptions.Expires));
             return cache.SetAsync($"{KeyPrefix}{key}", tokenValue.ToBytes(), options);
@@ -57,11 +72,15 @@ namespace Maydear.Mvc.Caching.Redis
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public Task<string> RetrieveAsync(string key)
+        public async Task<string> RetrieveAsync(string key)
         {
-            string accessTokenValue = cache.Get($"{KeyPrefix}{key}").ToTextString();
-            cache.Refresh($"{KeyPrefix}{key}");
-            return Task.FromResult(accessTokenValue);
+            if (string.IsNullOrWhiteSpace(key))
+            {
+                throw new ArgumentNullException(nameof(key));
+            }
+
+            var accessTokenValueBytes = await cache.GetAsync($"{KeyPrefix}{key}");
+            return accessTokenValueBytes?.ToTextString();
         }
 
         /// <summary>
@@ -71,6 +90,11 @@ namespace Maydear.Mvc.Caching.Redis
         /// <returns></returns>
         public async Task<string> StoreAsync(string tokenValue)
         {
+            if (string.IsNullOrWhiteSpace(tokenValue))
+            {
+                throw new ArgumentNullException(nameof(tokenValue));
+            }
+
             string guid = Guid.NewGuid().ToString("N");
             await RenewAsync(guid, tokenValue);
             return guid;

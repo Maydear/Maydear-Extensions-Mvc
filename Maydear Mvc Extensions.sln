@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2006
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maydear.Mvc", "src\Maydear.Mvc\Maydear.Mvc.csproj", "{EDA2C70F-2AE8-4B95-B48F-B63834CDA0DC}"
 EndProject
@@ -14,10 +14,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		.gitlab-ci.yml = .gitlab-ci.yml
 		CHANGELOG = CHANGELOG
 		LICENSE-2.0.txt = LICENSE-2.0.txt
 		NuGet.config = NuGet.config
 		nuget.exe = nuget.exe
+		push-nuget.sh = push-nuget.sh
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -25,9 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaydearMvcSample", "sample\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mayder.Mvc.UnitTest", "test\Mayder.Mvc.UnitTest\Mayder.Mvc.UnitTest.csproj", "{DA2881F9-C018-43CF-AAF5-E92C22AEC35E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maydear.Mvc.Caching.Memory", "src\Maydear.Mvc.Caching.Memory\Maydear.Mvc.Caching.Memory.csproj", "{38CE50B6-2C74-48CC-A7B3-E5A389FF8C15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maydear.Mvc.Caching.Memory", "src\Maydear.Mvc.Caching.Memory\Maydear.Mvc.Caching.Memory.csproj", "{38CE50B6-2C74-48CC-A7B3-E5A389FF8C15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maydear.Mvc.Caching.Redis", "src\Maydear.Mvc.Caching.Redis\Maydear.Mvc.Caching.Redis.csproj", "{0ADE0752-8576-4B6B-8A5C-9220503A246A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maydear.Mvc.Caching.Redis", "src\Maydear.Mvc.Caching.Redis\Maydear.Mvc.Caching.Redis.csproj", "{0ADE0752-8576-4B6B-8A5C-9220503A246A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

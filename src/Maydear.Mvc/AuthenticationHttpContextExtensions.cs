@@ -23,7 +23,10 @@ namespace Maydear.Mvc
             {
                 throw new ArgumentNullException(nameof(context));
             }
-
+            if (accessTokenValue.IsNullOrWhiteSpace())
+            {
+                throw new ArgumentNullException(nameof(accessTokenValue));
+            }
             if (context.RequestServices == null)
             {
                 throw new MissingMemberException("HttpContext.RequestServices is null");
@@ -96,7 +99,7 @@ namespace Maydear.Mvc
         }
 
         /// <summary>
-        /// 异步刷新token内容执行用户登出
+        /// 异步刷新token内容
         /// </summary>
         /// <param name="context">Http上下文</param>
         /// <param name="accessTokenObject">访问令牌对象</param>
@@ -156,8 +159,9 @@ namespace Maydear.Mvc
             {
                 throw new UnAuthorizedException();
             }
+            var accessTokenValue = accessTokenStore.RetrieveAsync(accessTokenKey);
 
-            return accessTokenStore.RetrieveAsync(accessTokenKey);
+            return accessTokenValue;
         }
 
         /// <summary>

@@ -17,6 +17,12 @@ namespace MaydearMvcSample.Controllers
             return HttpContext.SignInAsync(value);
         }
 
+        [HttpGet("list")]
+        public string List(string value)
+        {
+            return value;
+        }
+
         /// <summary>
         /// 
         /// </summary>
