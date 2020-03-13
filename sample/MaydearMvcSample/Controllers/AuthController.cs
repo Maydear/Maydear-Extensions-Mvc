@@ -18,6 +18,7 @@ namespace MaydearMvcSample.Controllers
         }
 
         [HttpGet("list")]
+        [AllowAnonymous]
         public string List(string value)
         {
             return value;

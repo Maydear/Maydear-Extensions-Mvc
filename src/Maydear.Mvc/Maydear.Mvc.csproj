@@ -37,7 +37,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Maydear" Version="2.3.105" />
+        <PackageReference Include="Maydear" Version="2.3.105.2" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
