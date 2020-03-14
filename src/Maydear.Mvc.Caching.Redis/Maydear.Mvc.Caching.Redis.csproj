@@ -17,7 +17,7 @@
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <Title>Maydear Mvc 扩展</Title>
         <Description>将accessToken值存储在Redis中的扩展。</Description>
-        <Version>2.3.105.3</Version>
+        <Version>2.3.106</Version>
         <AssemblyName>Maydear.Mvc.Caching.Redis</AssemblyName>
         <NeutralLanguage>zh-CN</NeutralLanguage>
         <Language>zh-CN</Language>
