@@ -17,7 +17,7 @@
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <Title>Maydear Mvc 扩展</Title>
         <Description>对api数据对象进行包装，增加请求日志耗时。</Description>
-        <Version>2.3.105.2</Version>
+        <Version>2.3.105.3</Version>
         <AssemblyName>Maydear.Mvc</AssemblyName>
         <NeutralLanguage>zh-CN</NeutralLanguage>
         <Language>zh-CN</Language>

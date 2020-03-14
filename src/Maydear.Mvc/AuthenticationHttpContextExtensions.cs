@@ -209,11 +209,11 @@ namespace Maydear.Mvc
         }
 
         /// <summary>
-        /// 获取请求的Header中Authorization的值
+        /// 获取请求的AccessToken值
         /// </summary>
         /// <param name="context">Http上下文</param>
         /// <returns></returns>
-        internal static string GetAccessToken(this HttpContext context)
+        public static string GetAccessToken(this HttpContext context)
         {
             string authorizationValue = GetAuthorization(context);
 

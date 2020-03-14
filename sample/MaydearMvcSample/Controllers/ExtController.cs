@@ -18,5 +18,15 @@ namespace MaydearMvcSample.Controllers
         {
             return null;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("xml")]
+        public IActionResult GetList()
+        {
+            return Content("<xml>user</xml>", "text/xml");
+        }
     }
 }
