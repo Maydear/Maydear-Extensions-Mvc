@@ -122,8 +122,53 @@ namespace Maydear.Mvc
             {
                 throw new UnAuthorizedException();
             }
-            string accessTokenValue = Newtonsoft.Json.JsonConvert.SerializeObject(accessTokenObject);
-            await accessTokenStore.RenewAsync(accessTokenKey, accessTokenValue);
+            try
+            {
+                string accessTokenValue = Newtonsoft.Json.JsonConvert.SerializeObject(accessTokenObject);
+                await accessTokenStore.RenewAsync(accessTokenKey, accessTokenValue);
+            }
+            catch (Exception ex)
+            {
+                throw new ForbiddenException(ex);
+            }
+        }
+
+        /// <summary>
+        /// 异步刷新token内容
+        /// </summary>
+        /// <param name="context">Http上下文</param>
+        /// <param name="accessTokenObject">访问令牌对象</param>
+        /// <param name="accessTokenKey">令牌键值</param>
+        /// <returns></returns>
+        public static async Task RefreshTokenValueAsync<T>(this HttpContext context, T accessTokenObject, string accessTokenKey)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            if (context.RequestServices == null)
+            {
+                throw new MissingMemberException("HttpContext.RequestServices is null");
+            }
+            if (string.IsNullOrEmpty(accessTokenKey))
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+            IAccessTokenStore accessTokenStore = context.RequestServices.GetRequiredService<IAccessTokenStore>();
+            var storeAccessTokenValue = await accessTokenStore.RetrieveAsync(accessTokenKey);
+            if (!string.IsNullOrWhiteSpace(storeAccessTokenValue))
+            {
+                try
+                {
+                    string accessTokenValue = Newtonsoft.Json.JsonConvert.SerializeObject(accessTokenObject);
+                    await accessTokenStore.RenewAsync(accessTokenKey, accessTokenKey);
+                }
+                catch (Exception ex)
+                {
+                    throw new ForbiddenException(ex);
+                }
+            }
         }
 
         /// <summary>
