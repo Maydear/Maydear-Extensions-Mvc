@@ -120,7 +120,7 @@ namespace Maydear.Mvc
             string accessTokenKey = GetAccessToken(context);
             if (string.IsNullOrEmpty(accessTokenKey))
             {
-                return;
+                throw new UnAuthorizedException();
             }
             string accessTokenValue = Newtonsoft.Json.JsonConvert.SerializeObject(accessTokenObject);
             await accessTokenStore.RenewAsync(accessTokenKey, accessTokenValue);
