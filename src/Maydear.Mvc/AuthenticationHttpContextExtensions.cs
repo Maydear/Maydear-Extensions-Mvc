@@ -219,12 +219,12 @@ namespace Maydear.Mvc
 
             if (string.IsNullOrEmpty(authorizationValue))
             {
-                return null;
+                throw new UnAuthorizedException();
             }
             string[] authorizationValueSplit = authorizationValue.Split(' ');
             if (authorizationValueSplit.Length != 2)
             {
-                return null;
+                throw new UnAuthorizedException();
             }
 
             return authorizationValueSplit[1];
