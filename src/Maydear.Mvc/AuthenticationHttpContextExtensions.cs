@@ -162,7 +162,7 @@ namespace Maydear.Mvc
                 try
                 {
                     string accessTokenValue = Newtonsoft.Json.JsonConvert.SerializeObject(accessTokenObject);
-                    await accessTokenStore.RenewAsync(accessTokenKey, accessTokenKey);
+                    await accessTokenStore.RenewAsync(accessTokenKey, accessTokenValue);
                 }
                 catch (Exception ex)
                 {
