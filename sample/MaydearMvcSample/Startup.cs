@@ -16,7 +16,10 @@ namespace MaydearMvcSample
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            corsPolicyName = Configuration.GetSection("Cors:PolicyName")?.Value;
         }
+
+        private readonly string corsPolicyName;
 
         public IConfiguration Configuration { get; }
 
@@ -26,6 +29,17 @@ namespace MaydearMvcSample
         {
             services.AddMaydearMvc();
             services.AddMaydearRedisCache(Configuration);
+
+            var origins = Configuration.GetSection("Cors:Origins")?.Value;
+
+            if (origins != null && origins.Any())
+            {
+                services.AddWildcardCors(options =>
+                {
+                    options.AddPolicy(corsPolicyName, builder => builder.WithOrigins());
+                });
+            }
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,6 +48,10 @@ namespace MaydearMvcSample
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }
+            if (!string.IsNullOrWhiteSpace(corsPolicyName))
+            {
+                app.UseCors(corsPolicyName);
             }
             app.UseMaydearMvc();
         }

@@ -1,6 +1,7 @@
 using Maydear.Exceptions;
 using Maydear.Mvc.Exceptions;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Logging;
 using System;
@@ -74,9 +75,19 @@ namespace Maydear.Mvc.Filters
             {
                 requestId = Guid.NewGuid();
             }
-            if (context.Exception is StatusCodeException)
+            if (context.Exception is UnAuthorizedException)
             {
-                context.Result = BuidResult(context.Exception as StatusCodeException, requestId, result);
+                context.Result = new Microsoft.AspNetCore.Mvc.UnauthorizedResult();
+            }
+            else if (context.Exception is ForbiddenException)
+            {
+                context.Result = new Microsoft.AspNetCore.Mvc.ForbidResult();
+            }
+            else if (context.Exception is StatusCodeException)
+            {
+                var excep = context.Exception as StatusCodeException;
+
+                context.Result = BuidResult(excep, requestId, result);
             }
             else
             {

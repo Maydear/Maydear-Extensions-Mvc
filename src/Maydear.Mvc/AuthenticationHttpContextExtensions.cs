@@ -23,7 +23,7 @@ namespace Maydear.Mvc
             {
                 throw new ArgumentNullException(nameof(context));
             }
-            if (accessTokenValue.IsNullOrWhiteSpace())
+            if (string.IsNullOrWhiteSpace(accessTokenValue))
             {
                 throw new ArgumentNullException(nameof(accessTokenValue));
             }
